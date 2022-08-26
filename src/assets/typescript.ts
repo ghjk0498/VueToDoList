@@ -60,7 +60,6 @@ function handleSubmit(e: SubmitEvent) {
 }
 
 function regist() {
-	console.log("asasdsadsad");
 	const inputElem: HTMLInputElement = <HTMLInputElement>document.getElementById("todo-input");
 	const todoList: Array<ToDo> = JSON.parse(<string>localStorage.getItem("todoList"));
 	
@@ -145,11 +144,7 @@ function check(elem: HTMLInputElement, id: string) {
 	
 	for (const todo of todoList) {
 		if (id === todo.id) {
-			if (elem.checked) {
-				todo.checked = true;
-			} else {
-				todo.checked = false;
-			}
+			todo.checked = elem.checked;
 			break;
 		}
 	}

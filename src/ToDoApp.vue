@@ -11,5 +11,5 @@ import ToDoList from './components/ToDoList.vue';
     ToDoList,
   },
 })
-export default class App extends Vue { }
+export default class ToDoApp extends Vue { }
 </script>
