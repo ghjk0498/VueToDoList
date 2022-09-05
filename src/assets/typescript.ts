@@ -109,6 +109,7 @@ function createTodoElement(input: string, id: string = "", checked: boolean = fa
 		count += 1;
 		textareaId = "text-" + count;
 	}
+	// textareaId = Date.now() + '' + Math.random();
 	textareaElem.setAttribute("id", textareaId);
 	checkboxElem.setAttribute("onclick", "check(this, '" + textareaId + "')");
 	
