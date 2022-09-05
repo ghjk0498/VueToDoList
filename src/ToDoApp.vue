@@ -33,7 +33,9 @@ export default class ToDoApp extends Vue {
     {id: "test", text: "test text", checked: false},
     {id: "test2", text: "test text2", checked: true}
   ];
-
+  created() {
+    console.log("a");
+  }
   submit() {
     this.createToDo(this.generateUniqueId(), this.text, false);
   }
