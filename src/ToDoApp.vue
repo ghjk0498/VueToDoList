@@ -58,5 +58,4 @@ export default class ToDoApp extends Vue {
 }
 </script>
 <style>
-@import '@/assets/style.css';
 </style>
