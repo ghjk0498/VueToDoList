@@ -25,5 +25,12 @@ export default class ToDoList extends Vue.with(Props) {
 </script>
 
 <style scoped>
-
+.todo-list-div {
+  background-color: #e2e2e2;
+  border: 1px solid black;
+  width: 500px;
+  height: 64vh;
+  padding: 5px;
+  overflow-y: scroll;
+}
 </style>

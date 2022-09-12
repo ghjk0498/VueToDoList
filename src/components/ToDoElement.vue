@@ -22,5 +22,28 @@ export default class ToDoElement extends Vue.with(Props) {
 </script>
 
 <style scoped>
+div {
+  display: flex;
+  margin: 3px;
+}
 
+div > input[type=checkbox] {
+  display: flex;
+  border: 1px solid black;
+  margin-right: 10px;
+}
+
+div > input[type=checkbox]:checked + textarea {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+div > textarea {
+  display: inline-block;
+  resize: none;
+  border: 1px solid black;
+  outline: none;
+  width: 490px;
+  height: 7.7vh;
+}
 </style>

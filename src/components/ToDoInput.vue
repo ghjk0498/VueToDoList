@@ -66,14 +66,37 @@ export default class ToDoInput extends Vue.with(Props) {
     }
   }
   @Watch("focusResetEvent")
-  onFocusReset() {
-    (this.currentFocusElement as HTMLTextAreaElement).style.border = "1px solid black";
-    this.currentFocusElement = undefined;
-    this.text = "";
+  onFocusReset(event: InputEvent) {
+    const checkbox: HTMLInputElement = event.target as HTMLInputElement;
+    if (this.currentFocusElement && this.currentFocusElement.id === (checkbox.nextSibling as HTMLElement).id) {
+      (this.currentFocusElement as HTMLTextAreaElement).style.border = "1px solid black";
+      this.currentFocusElement = undefined;
+      this.text = "";
+    }
   }
 }
 </script>
 
 <style scoped>
+.regist-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e2e2e2;
+  border: 1px solid black;
+  width: 500px;
+  height: 14vh;
+  padding: 5px;
+}
 
+.regist-div > textarea {
+  width: 430px;
+  height: 12vh;
+  resize: none;
+  margin-right: 10px;
+}
+
+.regist-div > input[type=submit] {
+  font-size: 1em;
+}
 </style>
