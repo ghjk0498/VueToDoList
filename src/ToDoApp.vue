@@ -22,6 +22,9 @@ export default class ToDoApp extends Vue {
   clickEvent: MouseEvent | null = null;
   focusResetEvent: InputEvent | null = null;
 
+  /**
+   * localStorage -> todoList
+   */
   created() {
     let list: string | null = localStorage.getItem("todoList");
     if (list != null) {
@@ -29,6 +32,10 @@ export default class ToDoApp extends Vue {
     }
   }
 
+  /**
+   * ToDoElement.vue -- Click Event --> ToDoInput.vue
+   * @param event
+   */
   sendClickEvent(event: MouseEvent) {
     const checkbox: HTMLInputElement = event.target as HTMLInputElement;
     if (!(checkbox.previousSibling as HTMLInputElement).checked) {
@@ -36,6 +43,10 @@ export default class ToDoApp extends Vue {
     }
   }
 
+  /**
+   * checked 되었을 때 호출
+   * @param event
+   */
   onTodoChange(event: InputEvent) {
     const checkbox: HTMLInputElement = event.target as HTMLInputElement;
     const id: string = (checkbox.nextSibling as HTMLElement).id;
@@ -49,7 +60,7 @@ export default class ToDoApp extends Vue {
     }
   }
 
-  // 테스트를 위해 localStorage에서 삭제하기 위해 사용
+  // 테스트를 위해 localStorage 에서 삭제하기 위해 사용
   onDeleteClick() {
     this.todoList = this.todoList.filter(todo => !todo.checked)
     localStorage.setItem("todoList", JSON.stringify(this.todoList));
